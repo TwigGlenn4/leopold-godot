@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://des58yugi0h2q"]
 
 [ext_resource type="PackedScene" uid="uid://c7u8hryloq7hy" path="res://addons/card-framework/card_manager.tscn" id="1_u4dg2"]
+[ext_resource type="PackedScene" uid="uid://bkpjlq7ggckg6" path="res://addons/card-framework/hand.tscn" id="2_uxq7t"]
 
 [node name="Leopold" type="Control" unique_id=1414316497]
 layout_mode = 3
@@ -11,4 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CardManager" parent="." unique_id=1860603799 instance=ExtResource("1_u4dg2")]
+layout_mode = 0
+
+[node name="Hand" parent="CardManager" unique_id=1431010202 instance=ExtResource("2_uxq7t")]
 layout_mode = 0
