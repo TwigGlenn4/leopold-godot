@@ -17,15 +17,21 @@ def write_cards(path: Path):
 
 	for suite in CARD_SUITES:
 		for value in CARD_VALUES:
+			
 			card_name: str = f"{suite}_{value}"
 			print(f"{card_name}...")
 
-			card_data: str = '{
-    "name": "diamond_Q",
-    "front_image": "cardDiamondsQ.png",
-    "suit": "diamond",
-    "value": "Q"
-}'
+			card_data: str = f"""{{
+	"name": "{card_name}",
+	"front_image": "{card_name}.png",
+	"suit": "{suite}",
+	"value": "{value}"
+}}
+"""
+
+			with open(path / f"{card_name}.json", "w") as file:
+				file.write(card_data)
+				file.close()
 
 def main():
 	PROJECT_ROOT: Path = (Path(os.path.realpath(__file__)).resolve().parent / "..").resolve()
